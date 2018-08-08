@@ -3,3 +3,10 @@
  **/
 
 /* Add in the Google Fonts of your choice */
+h1{
+    font-family: 'Amatic SC', cursive;
+}
+
+h2{
+    font-family: 'Francois One', sans-serif;
+}

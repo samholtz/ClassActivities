@@ -1,0 +1,50 @@
+<!--
+  (2 minutes)  CREATE HTML
+    JQUERY
+    SCRIPT
+    
+  (2 minutes)  OUTSIDE OF THE EVENT LISTENER, START
+    A TIMER
+
+  (5 minutes)
+    ADD AN EVENT LISTENER (on key up)
+        if the user types any key, clear the timer
+        then set a new timer
+
+    AT THE END OF THE TIMER ALERT "YOU HAVE BEEN LOGGED OFF DUE TO INACTIVITY"
+    HINT USE: CLEAR TIME OUT, SET TIME OUT
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+</head>
+
+<body>
+    <script>
+        var timerId = createTimer();
+
+        $(document).keyup(function () {
+            clearTimeout(timerId);
+
+            timerId = createTimer();
+        });
+
+        function createTimer() {
+            var name = "Chris";
+            var id = setTimeout(function () {
+                alert("YOU HAVE BEEN LOGGED OFF DUE TO INACTIVITY");
+            }, 3000);
+
+            return id;
+        }
+    </script>
+</body>
+
+</html>
