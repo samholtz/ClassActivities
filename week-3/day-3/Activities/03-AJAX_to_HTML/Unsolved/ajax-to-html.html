@@ -21,6 +21,8 @@
       </thead>
       <tbody>
         <!-- Insert movie rows here -->
+
+
       </tbody>
     </table>
   </div>
@@ -33,13 +35,24 @@
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
 
-      // Obtain a reference to the tbody element in the DOM
+      // Obtain a reference to the tbody element in the DOM(Document object model(our html))
+      var tbody = $("tbody");
       // Create and save a reference to new empty table row
+      var tr = $("<tr>");
       // Create and save references to 3 td elements containing the Title, Year, and Actors from the AJAX response object
+      var tdTitle = $("<td>").text("title");
+      var tdYear = $("<td>").text("year");
+      var tdActors = $("<td>").text("actors");
       // Append the td elements to the new table row
+      tr.append(tdTitle);
+      tr.append(tdYear);
+      tr.append(tdActors);
+
       // Append the table row to the tbody element
+      tbody.append(tr);
+
     });
 
     // Repeat the above logic to add rows for two more movies of your choice

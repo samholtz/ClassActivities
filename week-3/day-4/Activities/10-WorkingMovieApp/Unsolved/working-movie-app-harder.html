@@ -24,10 +24,11 @@
 
     <form id="movie-form">
       <label for="movie-input">Add a Movie Bro</label>
-      <input type="text" id="movie-input"><br>
+      <input type="text" id="movie-input">
+      <br>
 
       <!-- Button triggers new movie to be added -->
-      <input id="add-movie" type="submit" value="Add a Movie Bro">
+      <input id="add-movie" type="submit" value="Add a Movie">
     </form>
 
     <!-- Movies will get dumped here -->
@@ -48,11 +49,33 @@
         $.ajax({
           url: queryURL,
           method: "GET"
-        }).then(function(response) {
+        }).then(function (response) {
 
           // YOUR CODE GOES HERE!!!
+          var poster = $("<img>");
+          poster.attr("src", response.Poster);
+
+          var movieDiv = $("<div>");
+
+          var pRating = $("<p>");
+          pRating.text(response.Rated);
+
+          var pPlot = $("<p>");
+          pPlot.text(response.Plot);
+
+          var pRelease = $("<p>");
+          pRelease.text(response.Released);
+
+          movieDiv.append(poster);
+          movieDiv.append(pRating);
+          movieDiv.append(pPlot);
+          movieDiv.append(pRelease);
+
+          $("#movies-view").append(movieDiv);
+
 
         });
+
 
       }
 
@@ -81,7 +104,7 @@
       }
 
       // This function handles events where the add movie button is clicked
-      $("#add-movie").on("click", function(event) {
+      $("#add-movie").on("click", function (event) {
         event.preventDefault();
         // This line of code will grab the input from the textbox
         var movie = $("#movie-input").val().trim();
