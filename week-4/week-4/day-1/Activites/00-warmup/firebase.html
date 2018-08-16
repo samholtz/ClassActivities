@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Firebase 🔥</h1>
+        <input id="nameInput" placeholder="Name" type="text" class="form-control">
+        <input id="ageInput" placeholder="Age" type="text" class="form-control">
+        <button id="saveButton" class="btn btn-success">Add
+        </button>
+        <!--
+
+            Display the name and age from the bio
+            on the screen
+        -->
+        <div id="users">
+
+        </div>
+    </div>
+
+
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8='
+        crossorigin='anonymous'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBxw1OPNtvG1q9nbCyAcWItqDirCB-CaNE",
+            authDomain: "my-projecc-100ce.firebaseapp.com",
+            databaseURL: "https://my-projecc-100ce.firebaseio.com",
+            projectId: "my-projecc-100ce",
+            storageBucket: "my-projecc-100ce.appspot.com",
+            messagingSenderId: "978104760938"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="firebase.js"></script>
+
+
+</body>
+
+</html>

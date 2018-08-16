@@ -23,7 +23,7 @@
     <div id="buttons-view"></div>
 
     <form id="movie-form">
-      <label for="movie-input">Add a Movie Bro</label>
+      <label for="movie-input">Add a Movie</label>
       <input type="text" id="movie-input">
       <br>
 
@@ -111,13 +111,13 @@
 
         // The movie from the textbox is then added to our array
         movies.push(movie);
-
+        $("movie-input").val("");
         // Calling renderButtons which handles the processing of our movie array
         renderButtons();
 
       });
 
-      // Adding click event listeners to all elements with a class of "movie"
+      // Adding click event listeners to all elements with a class of "movie" - we're adding buttons at random times so we need to be able to access them. Some arent created until we click- then it will search the document and we can use them with it
       $(document).on("click", ".movie", displayMovieInfo);
 
       // Calling the renderButtons function to display the intial buttons
