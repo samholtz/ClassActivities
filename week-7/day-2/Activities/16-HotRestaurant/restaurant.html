@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>🔥 Hot Restaurant 🔥</h1>
+            <h3>Book your seat now!</h3>
+            <hr>
+            <button id="table"><button class=" btn btn-danger btn-lg "></span> View Tables</button></a>
+                <button id="reservation "><button class="btn btn-danger btn-lg "></span> Make Reservation 🍱</button></a>
+        </div>
+
+    </div>
+
+    <script type="text/javascript ">
+        $("#add-btn ").on("click ", function (event) {
+            event.preventDefault();
+            var newReservations = {
+                name: $("#name ").val().trim(),
+                partySize: $("#partySize ").val().trim(),
+                time: $("#time ").val().trim(),
+                date: $("#date ").val().trim()
+            };
+
+            $.post("/api/reservations", newReservations)
+                .then(function (data) {
+                    console.log("add.html ", data);
+                    alert("Adding reservations... ");
+                });
+        });
+    </script>
+
+
+</body>
+
+</html>

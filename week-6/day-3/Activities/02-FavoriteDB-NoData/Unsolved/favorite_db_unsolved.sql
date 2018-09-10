@@ -11,7 +11,8 @@ CREATE TABLE favorite_foods (
   -- Make an numeric column called "score" --
 );
 
-CREATE TABLE favorite_songs (
+CREATE TABLE favorite_songs
+(
   -- Make a string column called "song" which cannot contain null --
   -- Make a string column called "artist" --
   -- Make an integer column called "score" --
