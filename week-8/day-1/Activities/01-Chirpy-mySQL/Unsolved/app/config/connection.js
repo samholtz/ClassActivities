@@ -7,15 +7,15 @@ var mysql = require("mysql");
 
 // Set up our connection information
 var connection = mysql.createConnection({
-  host: "",
-  port: 3306,
-  user: "",
-  password: "",
-  database: ""
+  host: "localhost",
+  port: 8889,
+  user: "root",
+  password: "root",
+  database: "chirpy"
 });
 
 // Connect to the database
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
     return;
